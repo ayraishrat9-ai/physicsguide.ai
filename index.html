@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhysicsHub - Complete Physics Resource</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    
+    <div class="content">
+        <header>
+            <div class="logo">⚛ PhysicsHub</div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#scientists">Scientists</a>
+                <a href="#muslim">Muslim Scientists</a>
+                <a href="#branches">Branches</a>
+                <a href="#formulas">Formulas</a>
+                <a href="#calculator">Calculator</a>
+                <a href="#experiments">Experiments</a>
+            </nav>
+            <div class="auth-buttons" id="authButtons">
+                <button class="btn-login" onclick="showLogin()">Login</button>
+                <button class="btn-signup" onclick="showSignup()">Sign Up</button>
+            </div>
+            <div class="user-info" id="userInfo" style="display:none;">
+                <span id="userName"></span>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </header>
+        
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <h1>Physics Hub</h1>
+            <p>Complete physics resource - Scientists, Muslim Scholars, All Branches, Formulas, Calculator & Interactive 3D Experiments with AI Assistant</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" id="calcCount">17</span>
+                    <span class="stat-label">Calculations</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Scientists</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">3D Experiments</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Scientists -->
+        <section id="scientists">
+            <h2 class="section-title">Famous Physicists</h2>
+            <div class="cards-grid">
+                <div class="card"><h3>Albert Einstein</h3><p>Relativity theory (special & general), E=mc², photoelectric effect. Nobel Prize 1921.</p></div>
+                <div class="card"><h3>Isaac Newton</h3><p>Laws of motion and universal gravitation, calculus, reflecting telescope.</p></div>
+                <div class="card"><h3>Niels Bohr</h3><p>Bohr model of atom, quantum mechanics, Copenhagen interpretation.</p></div>
+                <div class="card"><h3>Max Planck</h3><p>Founder of quantum theory, Planck's quantum hypothesis.</p></div>
+                <div class="card"><h3>Richard Feynman</h3><p>Quantum electrodynamics (QED), Feynman diagrams, quantum computing.</p></div>
+                <div class="card"><h3>Stephen Hawking</h3><p>Black hole radiation (Hawking radiation), singularity theorems.</p></div>
+                <div class="card"><h3>Marie Curie</h3><p>Radioactivity research, discovered polonium and radium.</p></div>
+                <div class="card"><h3>Erwin Schrödinger</h3><p>Schrödinger equation, wave mechanics, quantum superposition.</p></div>
+                <div class="card"><h3>Werner Heisenberg</h3><p>Uncertainty principle, matrix mechanics, quantum mechanics.</p></div>
+            </div>
+        </section>
+        
+        <!-- Muslim Scientists -->
+        <section id="muslim">
+            <h2 class="section-title">Muslim Scientists in Physics</h2>
+            <div class="cards-grid">
+                <div class="card"><h3>Ibn al-Haytham (Alhazen)</h3><p>Father of modern optics, camera obscura, scientific method. Book of Optics.</p></div>
+                <div class="card"><h3>Al-Biruni</h3><p>Calculated Earth's circumference, studied specific gravity, astronomical observations.</p></div>
+                <div class="card"><h3>Ibn Sina (Avicenna)</h3><p>Canon of Medicine, physics concepts of motion and time.</p></div>
+                <div class="card"><h3>Al-Khwarizmi</h3><p>Founder of algebra (algorithm named after him), Hindu numerals.</p></div>
+                <div class="card"><h3>Al-Farabi</h3><p>Physics of music, vacuum theory, "Second Teacher" after Aristotle.</p></div>
+                <div class="card"><h3>Ibn Rushd (Averroes)</h3><p>Aristotle commentaries, physics of motion.</p></div>
+                <div class="card"><h3>Al-Tusi</h3><p>Tusi couple (planetary motion geometry), trigonometry as separate field.</p></div>
+                <div class="card"><h3> Ibn al-Shatir</h3><p>Heliocentric model before Copernicus, astronomical instruments.</p></div>
+                <div class="card"><h3>Al-Kindi</h3><p>Cryptanalysis pioneer, frequency analysis for code-breaking.</p></div>
+            </div>
+        </section>
+        
+        <!-- Branches -->
+        <section id="branches">
+            <h2 class="section-title">Physics Branches</h2>
+            <div class="cards-grid">
+                <div class="card"><h3>Quantum Mechanics</h3><p>Atomic/subatomic physics - wave-particle duality, uncertainty principle.</p></div>
+                <div class="card"><h3>Relativity</h3><p>Special & general relativity - gravity, time dilation, space-time.</p></div>
+                <div class="card"><h3>Particle Physics</h3><p>Fundamental particles - quarks, leptons, bosons, Standard Model.</p></div>
+                <div class="card"><h3>Astrophysics</h3><p>Celestial objects, stars, galaxies, universe origins.</p></div>
+                <div class="card"><h3>Thermodynamics</h3><p>Heat, work, temperature, energy, entropy.</p></div>
+                <div class="card"><h3>Electromagnetism</h3><p>Electricity, magnetism, light, electromagnetic waves.</p></div>
+                <div class="card"><h3>Nuclear Physics</h3><p>Atomic nuclei, nuclear reactions, radioactivity.</p></div>
+                <div class="card"><h3>Classical Mechanics</h3><p>Newton's laws, motion, forces, energy.</p></div>
+            </div>
+        </section>
+        
+        <!-- Formulas -->
+        <section id="formulas">
+            <h2 class="section-title">Physics Formulas</h2>
+            <div class="formula-container">
+                <div class="formula-name">Einstein's Mass-Energy</div><div class="formula">E = mc²</div>
+            </div>
+            <div class="formula-container">
+                <div class="formula-name">Schrödinger Equation</div><div class="formula">iℏ∂Ψ/∂t = ĤΨ</div>
+            </div>
+            <div class="formula-container">
+                <div class="formula-name">Newton's Second Law</div><div class="formula">F = ma</div>
+            </div>
+            <div class="formula-container">
+                <div class="formula-name">General Relativity</div><div class="formula">Gμν + Λgμν = (8πG/c⁴)Tμν</div>
+            </div>
+            <div class="formula-container">
+                <div class="formula-name">Heisenberg Uncertainty</div><div class="formula">Δx · Δp ≥ ℏ/2</div>
+            </div>
+            <div class="formula-container">
+                <div class="formula-name">Coulomb's Law</div><div class="formula">F = kq₁q₂/r²</div>
+            </div>
+            <div class="formula-container">
+                <div class="formula-name">Kinetic Energy</div><div class="formula">KE = ½mv²</div>
+            </div>
+            <div class="formula-container">
+                <div class="formula-name">Wave Equation</div><div class="formula">v = fλ</div>
+            </div>
+        </section>
+        
+        <!-- Calculator -->
+        <section id="calculator">
+            <h2 class="section-title">Physics Calculator</h2>
+            <div class="calculator-container">
+                <div class="calc-selector">
+                    <select id="calcType" onchange="updateCalcInputs()">
+                        <option value="">Select Calculation...</option>
+                    </select>
+                </div>
+                <div class="calc-inputs" id="calcInputs"></div>
+                <button class="calc-btn" onclick="calculate()">Calculate</button>
+                <div class="calc-result" id="calcResult"></div>
+            </div>
+        </section>
+        
+        <!-- 3D Experiments -->
+        <section id="experiments">
+            <h2 class="section-title">Interactive 3D Experiments</h2>
+            <canvas id="experiment-canvas"></canvas>
+            <div class="experiment-controls">
+                <button class="exp-btn" onclick="loadExperiment('solar')">Solar System</button>
+                <button class="exp-btn" onclick="loadExperiment('atom')">Hydrogen Atom</button>
+                <button class="exp-btn" onclick="loadExperiment('wave')">Wave Motion</button>
+                <button class="exp-btn" onclick="loadExperiment('pendulum')">Pendulum</button>
+                <button class="exp-btn" onclick="loadExperiment('collision')">Particle Collision</button>
+                <button class="exp-btn" onclick="loadExperiment('atom3d')">Electron Cloud</button>
+                <button class="exp-btn" onclick="loadExperiment('gravity')">Gravity Well</button>
+            </div>
+            <p class="exp-desc" id="expDesc">Solar System: Watch planets orbit the Sun with realistic speeds</p>
+        </section>
+        
+        <footer><p>© 2024 PhysicsHub - Complete Physics Resource with Backend API</p></footer>
+    </div>
+    
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-box">
+            <h2>Welcome to PhysicsHub</h2>
+            <p style="color: #888; margin-bottom: 20px;">Login to access all features</p>
+            <input type="email" id="loginEmail" placeholder="Email Address">
+            <input type="password" id="loginPassword" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <p class="modal-footer">Don't have an account? <a href="#" onclick="switchToSignup()">Sign Up</a></p>
+        </div>
+    </div>
+    
+    <!-- Signup Modal -->
+    <div class="modal-overlay" id="signupModal">
+        <div class="modal-box">
+            <h2>Create Account</h2>
+            <p style="color: #888; margin-bottom: 20px;">Join PhysicsHub today</p>
+            <input type="text" id="signupName" placeholder="Full Name">
+            <input type="email" id="signupEmail" placeholder="Email Address">
+            <input type="password" id="signupPassword" placeholder="Password">
+            <input type="password" id="signupConfirm" placeholder="Confirm Password">
+            <button onclick="signup()">Sign Up</button>
+            <p class="modal-footer">Already have an account? <a href="#" onclick="switchToLogin()">Login</a></p>
+        </div>
+    </div>
+    
+    <!-- AI Chat -->
+    <div class="ai-chat-container">
+        <button class="ai-toggle" onclick="toggleAI()">🤖</button>
+        <div class="ai-chat-box" id="aiChatBox">
+            <div class="ai-messages" id="aiMessages">
+                <div class="ai-msg">Hello! I'm your Physics AI Assistant. Ask me anything about physics, scientists, formulas, or request a 3D experiment!</div>
+            </div>
+            <div class="ai-input-area">
+                <input type="text" class="ai-input" id="aiInput" placeholder="Ask about physics..." onkeypress="if(event.key==='Enter')sendAI()">
+                <button class="ai-send" onclick="sendAI()">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
+
